@@ -1,0 +1,39 @@
+name: euler
+channels:
+  - pytorch
+  - huggingface
+  - conda-forge
+  - mhoelzl
+  - defaults
+dependencies:
+  - python[version='>=3.9']
+  - cudatoolkit[version='>=11.3,<11.4']
+  - cudnn
+  - autopep8
+  - black
+  - datasets
+  - ipykernel
+  - jupyter
+  - matplotlib
+  - nbex
+  - numpy
+  - pandas
+  - pip
+  - pulp
+  - pyarrow
+  - pytest
+  - pytest-cov
+  - pytorch
+  - rope
+  - scikit-learn
+  - seaborn
+  - skorch
+  - spacy[version='>=3']
+  - tensorboard
+  - tensorflow[version='>=2']
+  - torchvision
+  - torchtext
+  - transformers
+  - pip:
+    - mip
+    - torch-tb-profiler
