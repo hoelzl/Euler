@@ -66,19 +66,25 @@ get_result()
 
 # %%
 def is_row_valid(row):
-	if any(not isinstance(var.x, float) for var in vars[row]):
-		return False, None
-	row_sum = np.sum(vars[digits[row, col], col].x for col in range(vars.shape[1]))
-	return row_sum == num_correct[row], row_sum
+	row_sum = np.sum([vars[digits[row, col], col].x for col in range(vars.shape[1])])
+	return row_sum == num_correct[row]
+
+# %%
+is_row_valid(0), is_row_valid(1)
 
 # %%
 def are_all_rows_valid():
-	all(is_row_valid(row) for row in range(digits.shape[0]))
+	return all(is_row_valid(row) for row in range(digits.shape[0]))
+
+# %%
+are_all_rows_valid()
 
 # %%
 if __name__ == "__main__":
-	if are_all_rows_valid:
+	if are_all_rows_valid():
 		print(f"A possible result is {get_result()}.")
+	else:
+		print("No solution could be found.")
 	
 # %%
 
